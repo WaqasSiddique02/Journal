@@ -18,7 +18,8 @@
           <p class="lead">
             Welcome to the Daily Journal, your heaven of reflection and growth. Celebrate the power of words and self-expression as you document dreams, reflect on your journey, and capture everyday magic. Dive into this serene space, unleash your creativity, and cultivate a deeper connection with yourself. Every page is a new beginning.</p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <button type="button" class="btn btn-dark btn-lg px-4 me-md-2">Explore</button>
+            <a href="#journals"> <button type="button" class="btn btn-dark btn-lg px-4 me-md-2">Explore</button></a>
+           
           </div>
         </div>
       </div>
@@ -26,9 +27,25 @@
     <section id="journals">
       <div class="container col-xxl-8 px-4 py-0">
         <h1>Journals</h1>
+        <div class="row">
+          <% if (journals.length > 0) { %>
+            <% journals.forEach(function(journal) { %>
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= journal.title %></h5>
+                    <p class="card-text"><%= journal.content.substring(0,150) + " ..."%> <a href="#">Read More</a></p>
+                    <p class="card-text"><small class="text-muted"><%= new Date(journal.date).toLocaleDateString() %></small></p>
+                  </div>
+                </div>
+              </div>
+            <% }); %>
+          <% } else { %>
+            <p>No journals found.</p>
+          <% } %>
+        </div>
       </div>
     </section>
-
     <%- include('footer'); %>
   </body>
 </html>
