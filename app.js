@@ -12,6 +12,7 @@ var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 var signupRouter= require('./routes/register');
 var composeRouter=require('./routes/compose');
+var journalRouter=require('./routes/journal');
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use('/users', usersRouter);
 app.use('/login',loginRouter);
 app.use('/register',signupRouter);
 app.use('/compose',composeRouter);
+app.use('/journal',journalRouter);
 
 var config = {
   user:'waqas',

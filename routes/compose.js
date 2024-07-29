@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var sql=require('mssql');
 
-/* GET home page. */
+/* GET compose page. */
 router.get('/', function(req, res, next) {
   res.render('compose', { title: 'Home' });
 });
