@@ -23,7 +23,7 @@
     <div class="container col-xxl-8 px-4 py-0">
       <h1>Journals</h1>
       <div class="row">
-        <% if (journals.length> 0) { %>
+        <% if (journals.length> 0) {%>
           <% journals.forEach(function(journal) { %>
             <div class="col-md-3 mb-4">
               <div class="card">
@@ -33,7 +33,7 @@
                   </h5>
                   <p class="card-text">
                     <%= journal.content.substring(0,150) + " ..." %>
-                      <a href="/journal/<%= journal.userId%>">Read More</a>
+                    <a href='/journal/<%=journal.userId%>'>Read More</a>
                   </p>
                   <p class="card-text"><small class="text-muted">
                       <%= new Date(journal.date).toLocaleDateString() %>

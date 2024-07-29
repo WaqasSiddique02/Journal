@@ -5,8 +5,7 @@ var sql = require('mssql');
 /* GET home page with journals. */
 router.get('/', async function(req, res, next) {
   try {
-    const result = await sql.query("SELECT title, content, date FROM userData;");
-
+    const result = await sql.query("SELECT title, content, date,userId FROM userData;");
     res.render('index', { 
       title: 'Home',
       journals: result.recordset 
