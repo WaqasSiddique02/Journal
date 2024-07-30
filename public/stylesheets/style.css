@@ -2,6 +2,52 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.header-content{
+  background-color: #1d1c1c;
+  color: aliceblue;  
+  padding: 100px;
+  text-align: center;
+}
+
+.header-content h1{
+  font-size: 60px;
+  font-family: 'Arial Narrow', Arial, sans-serif;
+}
+
+.header-content p{
+  font-size: 19px;
+  line-height: 1.4;
+  margin-top: 20px;
+  font-family: 'Arial Narrow', Arial, sans-serif;
+}
+
+.sidebar-container {
+  max-height: 650px; 
+  overflow-y: auto;
+  overflow-x: auto;
+  padding-right: 8px; 
+}
+
+#main-content{
+  margin-top: 100px;
+}
+
+.journal-link{
+  text-decoration: none;
+  color: black;
+}
+
+.journal-link:hover{
+  color: rgb(46, 45, 45);
+}
+
+.journal-page h2{
+  margin-top:50px ;
+}
+
+.journal-page p{
+  margin-top: 20px;
+  line-height: 1.4;
+  font-size: 17px;
+  text-align: justify;
 }

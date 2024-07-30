@@ -1,0 +1,24 @@
+<div class="sidebar-container">
+    <ul class="list-group">
+      <% if (journals.length > 0) { %>
+        <% 
+          journals.sort(function(a, b) {
+            return new Date(b.date) - new Date(a.date);
+          });
+
+          journals.forEach(function(journal) { 
+        %>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="mb-1">
+                <a href='/journal/<%= journal.userId %>' class="journal-link"><%= journal.title %></a>
+              </h6>
+              <small class="text-muted"><%= new Date(journal.date).toLocaleDateString() %></small>
+            </div>
+          </li>
+        <% }); %>
+      <% } else { %>
+        <p>No journals found.</p>
+      <% } %>
+    </ul>
+  </div>
