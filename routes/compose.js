@@ -4,7 +4,7 @@ var sql=require('mssql');
 
 /* GET compose page. */
 router.get('/', function(req, res, next) {
-  res.render('compose', { title: 'Home' });
+  res.render('compose');
 });
 
 router.post('/', async function(req,res){

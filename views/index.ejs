@@ -1,29 +1,28 @@
 <%- include('header'); %>
 
-<section id="header">
-  <div class="header-content">
-    <h1>Journals</h1>
-    <p>
-      Celebrate the power of words and self-expression as you document dreams, reflect on your journey, and capture everyday magic. Dive into this
-      serene space, unleash your creativity, and cultivate a deeper connection with yourself. Every page is a new
-      beginning.
-    </p>
-  </div>
-</section>
+  <section id="header">
+    <div class="header-content">
+      <h1>Journals</h1>
+      <p>
+        Celebrate the power of words and self-expression as you document dreams, reflect on your journey, and capture 
+        everyday magic. Dive into this serene space, unleash your creativity, and cultivate a deeper connection with
+        yourself. Every page is a new beginning.
+      </p>
+    </div>
+  </section>
 
-<section id="main-content">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <%- include('nav'); %>
-      </div>
-      <div class="col-md-9">
-        <div class="row">
-          <% if (journals.length > 0) { %>
-            <% journals
-              .sort((a, b) => new Date(b.date) - new Date(a.date))
-              .slice(0, 9)
-              .forEach(function(journal) { %>
+  <section id="main-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <%- include('nav'); %>
+        </div>
+        <div class="col-md-9">
+          <div class="row">
+            <% if (journals.length> 0) { %>
+              <% journals .sort((a, b)=> new Date(b.date) - new Date(a.date))
+                .slice(0, 9)
+                .forEach(function(journal) { %>
                 <div class="col-md-6 col-lg-4 mb-4">
                   <div class="card">
                     <div class="card-body">
@@ -31,7 +30,7 @@
                         <%= journal.title %>
                       </h5>
                       <p class="card-text">
-                        <%= journal.content.substring(0, 150) + " ..." %>
+                        <%= journal.content ? journal.content.substring(0, 150) + "..." : "" %>
                         <a href='/journal/<%= journal.userId %>'>Read More</a>
                       </p>
                       <p class="card-text">
@@ -42,14 +41,14 @@
                     </div>
                   </div>
                 </div>
-            <% }); %>
-          <% } else { %>
-            <p>No journals found.</p>
-          <% } %>
+                <% }); %>
+                  <% } else { %>
+                    <p>No journals found.</p>
+                    <% } %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<%- include('footer'); %>
+  <%- include('footer'); %>

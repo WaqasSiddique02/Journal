@@ -9,8 +9,6 @@ var sql=require('mssql');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var loginRouter = require('./routes/login');
-var signupRouter= require('./routes/register');
 var composeRouter=require('./routes/compose');
 var journalRouter=require('./routes/journal');
 
@@ -29,8 +27,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/login',loginRouter);
-app.use('/register',signupRouter);
 app.use('/compose',composeRouter);
 app.use('/journal',journalRouter);
 
